@@ -13,6 +13,7 @@ export const ADD_MESSAGE = gql`
   mutation addMessage($message: String!) {
     addMessage(message: $message) {
       message
+      id
     }
   }
 `;
