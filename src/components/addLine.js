@@ -5,26 +5,26 @@ import { Mutation } from "react-apollo";
 import { GET_MESSAGES, ADD_MESSAGE } from ".././queries.js";
 
 const updateCache = (cache, { data: { addMessage } }) => {
-  const { messsages } = cache.readQuery({ query: GET_NAMES });
+  const { messages } = cache.readQuery({ query: GET_MESSAGES });
 
   cache.writeQuery({
     query: GET_MESSAGES,
     data: {
-      messages: messsages.concat(addMessage)
+      messages: messages.concat(addMessage)
     }
   });
 };
 
 const enhance = withState("message", "setMessage", "");
 export default enhance(({ message, setMessage }) => (
-  <Mutation mutation={ADD_MESSAGE} update={updateCache} variables={{ name }}>
+  <Mutation mutation={ADD_MESSAGE} update={updateCache} variables={{ message }}>
     {addMessage => (
       <form
         className="pa4 black-80"
         onSubmit={async e => {
           e.preventDefault();
-          await createNames({ variables: { message: message } });
-          setName("");
+          await addMessage({ variables: { message: message } });
+          setMessage("");
         }}
       >
         <div className="measure">
@@ -38,7 +38,7 @@ export default enhance(({ message, setMessage }) => (
             className="avenir input-reset ba b--black-20 pa2 mb2 db w-100"
             type="text"
             aria-describedby="name-desc"
-            onChange={e => setName(e.target.value)}
+            onChange={e => setMessage(e.target.value)}
           />
         </div>
       </form>

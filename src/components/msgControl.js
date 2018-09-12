@@ -11,7 +11,7 @@ const MsgControl = () => (
       if (error) return <p>Error :(</p>;
 
       return data.messages.map(currentMessage => (
-        <Msg message={currentMessage} />
+        <Msg key={currentMessage.id} message={currentMessage} />
       ));
     }}
   </Query>
