@@ -1,0 +1,100 @@
+$red: #233;
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$primary-dark: #005dff;
+
+$sans-serif: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+$serif: Merriweather, Georgia, "Times New Roman", serif;
+$mono: "Source Code Pro", Courier, mono;
+
+.navigation {
+  padding-left: 75px;
+  padding-top: 35px;
+  padding-right: 75px;
+  font-size: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  font: $sans-serif;
+  color: $primary-color;
+}
+
+.navitem {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: grey;
+  }
+
+  .navitemright {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: grey;
+    margin-left: auto;
+  }
+
+  .google-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    background: #ff5353;
+}
+
+.dong {
+  color: $red;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.ballsack {
+  width: 55%;
+  margin: "22px";
+  border-radius: 12%;
+  margin-bottom: 200px;
+}
+
+
+.rightnavvy {
+  padding-left: 75px;
+  padding-top: 35px;
+  padding-right: 75px;
+  font-size: 100%;
+  font: $sans-serif;
+  color: $primary-color;
+  float: right;
+}
+
+.picsrounded {
+  border-radius: 25px;
+  background: url(https://images.pexels.com/photos/1034812/pexels-photo-1034812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+img {
+  border-radius: 1%;
+}
+
+h1 {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.navItemRightStyle {
+  display: inline;
+  text-align: right;
+}
+
+.cool {
+  clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+  background-color: color(primary-dark);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}

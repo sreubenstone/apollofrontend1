@@ -1,28 +1,46 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import MsgControl from "./components/msgControl";
 import "./App.css";
-import Addline from "./components/addLine.js";
+import Home from "./components/home";
+import About from "./components/aboutus";
+import Nav from "./components/Nav";
+import Login from "./components/login";
+import Profile from "./components/profile";
+import Footer from "./components/footer";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });
 
-const App = () => (
-  <ApolloProvider client={client}>
-    <div className="container">
-      <nav className="navbar navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">
-          Network Pick Up Lines
-        </a>
-      </nav>
-      <div>
-        <MsgControl />
-        <Addline />
-      </div>
-    </div>
-  </ApolloProvider>
-);
+
+class App extends Component {
+  state = {
+    loggedIn: true
+  }
+
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <div>
+            <div className="cool" />
+            <Nav loggedIn={this.state.loggedIn} />
+            <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/howitworks" component={About} />
+              <Route path="/login" component={Login} />
+              <Route path="/my/profile" render={() => (
+                this.state.loggedIn ? (<Profile />) : (<Redirect to='/' />)
+              )} />
+            </Switch>
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </ApolloProvider>
+    );
+  }
+}
 
 export default App;

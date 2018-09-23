@@ -1,50 +1,26 @@
-const { BrowserRouter, Switch, Route, Link } = ReactRouterDOM;
-import React, { Component } from "react";
+<div className="navvy">
+  ]
+  <div id="main-menu">
+    <div className="nav-bar">
+      <NavLink style={navItemStyle} to="/">
+        Home
+        {"            "}
+      </NavLink>
+      <NavLink style={navItemStyle} to="/howitworks">
+        How It Works
+        {"              "}
+      </NavLink>
 
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/howitworks">How It Works</Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
-);
-
-const Main = () => (
-  <main>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/howitworks" component={Howitworks} />
-    </Switch>
-  </main>
-);
-
-const Apptest = () => (
-  <div>
-    <Header />
-    <Main />
+      <span className="navItemRightStyle">
+        <NavLink style={navItemStyle} to="/">
+          Sign Up
+          {"     "}
+        </NavLink>
+        <NavLink style={navItemStyle} to="/">
+          Login
+          {"     "}
+        </NavLink>
+      </span>
+    </div>
   </div>
-);
-
-const Howitworks = () => (
-  <div>
-    <ul>
-      <li>Submit a pickup line</li>
-      <li>Watch netflix</li>
-      <li>Win!</li>
-    </ul>
-  </div>
-);
-
-ReactDOM.render(
-  <BrowserRouter>
-    <Apptest />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+</div>;

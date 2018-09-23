@@ -28,14 +28,12 @@ export default enhance(({ message, setMessage }) => (
         }}
       >
         <div className="measure">
-          <label htmlFor="name" className="avenir f6 b db mb2">
-            Submit Your Pick Up Line Home Boy
-          </label>
+          <label htmlFor="name" className="avenir f6 b db mb2" />
           <input
             id="name"
             required
             value={message}
-            className="avenir input-reset ba b--black-20 pa2 mb2 db w-100"
+            className="ballsack"
             type="text"
             aria-describedby="name-desc"
             onChange={e => setMessage(e.target.value)}
