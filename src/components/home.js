@@ -14,7 +14,7 @@ const Home = () => {
           align="center"
           height="300"
           width="600"
-          src="https://images.pexels.com/photos/6111/smartphone-friends-internet-connection.jpg?cs=srgb&dl=cell-phone-connection-contact-6111.jpg&fm=jpg>"
+          src="https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         />
       </div>
       <h1> All Pick Up Lines</h1>
