@@ -3,6 +3,8 @@ import { withState } from "recompose";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import { GET_MESSAGES, ADD_MESSAGE } from ".././queries.js";
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
 const updateCache = (cache, { data: { addMessage } }) => {
   const { messages } = cache.readQuery({ query: GET_MESSAGES });
@@ -14,6 +16,19 @@ const updateCache = (cache, { data: { addMessage } }) => {
     }
   });
 };
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
+
 
 const enhance = withState("message", "setMessage", "");
 export default enhance(({ message, setMessage }) => (

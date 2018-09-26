@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Nav = (props) => {
@@ -20,6 +21,8 @@ const Nav = (props) => {
         <NavLink className="navitem" to="/">Home{""}</NavLink>
         <NavLink className="navitem" to="/howitworks">How It Works{""}</NavLink>
         <NavLink className="navitemright" to="/my/profile">My Profile{""}</NavLink>
+        <a href="http://localhost:4000/auth/logout" className="navitem">Logout</a>
+
       </div>
     );
   }
