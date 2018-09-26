@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 const Nav = (props) => {
-  const loggedIn = props.test;
+  const loggedIn = props.auth;
   if (!loggedIn) {
     return (
       <div className="navigation">
